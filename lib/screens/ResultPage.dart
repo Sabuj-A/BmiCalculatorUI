@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmicalc/Colors.dart';
+import 'TipsPage.dart';
 
 class ResultPage extends StatelessWidget {
   final finalResult;
@@ -83,99 +84,154 @@ class ResultPage extends StatelessWidget {
                   ],
                 ),
               ),
-
             ],
           ),
-          SizedBox(height: 20.0,),
+          SizedBox(
+            height: 20.0,
+          ),
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
-                          child: Container(
+              child: Container(
                 color: Color(0xFF5F786C),
                 height: 450.0,
                 width: 250.0,
-                alignment: Alignment.center,child: Column(
-                
-                children: <Widget>[
-                 Container(
-                 color: first,
-                   child: ListTile(
-                    
-                     leading: Icon(FontAwesomeIcons.squareFull,color: Colors.black,size: 20.0,),
-                     title: Text('Severe Thinness'),
-                     trailing: Text('< 16'),
-                    
-                   ),
-                 ),
-                 Container(
-                   color:second,
-                   child: ListTile(
-                    
-                     leading: Icon(FontAwesomeIcons.squareFull,color: Colors.blue,size: 20.0,),
-                     title: Text('Moderate Thinness'),
-                     trailing: Text('16 - 17'),
-                   ),
-                 ),
-                  Container(
-                    color:third,
-                    child: ListTile(
-                     
-                     leading: Icon(FontAwesomeIcons.squareFull,color: Colors.brown,size: 20.0,),
-                     title: Text('Mild Thinness'),
-                     trailing: Text('< 17 - 18.5'),
-                 ),
-                  ),
-                  Container(
-                    color:fourth,
-                    child: ListTile(
-        
-                     leading: Icon(FontAwesomeIcons.squareFull,color: Colors.grey,size: 20.0,),
-                     title: Text('Normal'),
-                     trailing: Text('18.5 - 25'),
-                 ),
-                  ),
-                  Container(
-                    color:fifth,
-                    child: ListTile(
-               
-                     leading: Icon(FontAwesomeIcons.squareFull,color: Colors.orange,size: 20.0,),
-                     title: Text('Overweight'),
-                     trailing: Text('25 - 30'),
-                 ),
-                  ),
-                  Container(
-                    color:sixth,
-                    child: ListTile(
-               
-                     leading: Icon(FontAwesomeIcons.squareFull,color: Colors.red.shade400,size: 20.0,),
-                     title: Text('Obese Class I'),
-                     trailing: Text('30 - 35'),
-                 ),
-                  ),
-                  Container(
-                    color:seventh,
-                    child: ListTile(
-               
-                     leading: Icon(FontAwesomeIcons.squareFull,color: Colors.red.shade500,size: 20.0,),
-                     title: Text('Obese Class II'),
-                     trailing: Text('35 - 40'),
-                 ),
-                  ),
-                  Container(
-                    color:eighth,
-                    child: ListTile(
-               
-                     leading: Icon(FontAwesomeIcons.squareFull,color: Colors.red.shade600,size: 20.0,),
-                     title: Text('Obese Class III'),
-                     trailing: Text('> 40'),
-                    
-                 ),
-                  ),
-                ],
-              )),
+                alignment: Alignment.center,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      color: first,
+                      child: ListTile(
+                        leading: Icon(
+                          FontAwesomeIcons.squareFull,
+                          color: Colors.black,
+                          size: 20.0,
+                        ),
+                        title: Text('Severe Thinness'),
+                        trailing: Text('< 16'),
+                      ),
+                    ),
+                    Container(
+                      color: second,
+                      child: ListTile(
+                        leading: Icon(
+                          FontAwesomeIcons.squareFull,
+                          color: Colors.blue,
+                          size: 20.0,
+                        ),
+                        title: Text('Moderate Thinness'),
+                        trailing: Text('16 - 17'),
+                      ),
+                    ),
+                    Container(
+                      color: third,
+                      child: ListTile(
+                        leading: Icon(
+                          FontAwesomeIcons.squareFull,
+                          color: Colors.brown,
+                          size: 20.0,
+                        ),
+                        title: Text('Mild Thinness'),
+                        trailing: Text('< 17 - 18.5'),
+                      ),
+                    ),
+                    Container(
+                      color: fourth,
+                      child: ListTile(
+                        leading: Icon(
+                          FontAwesomeIcons.squareFull,
+                          color: Colors.grey,
+                          size: 20.0,
+                        ),
+                        title: Text('Normal'),
+                        trailing: Text('18.5 - 25'),
+                      ),
+                    ),
+                    Container(
+                      color: fifth,
+                      child: ListTile(
+                        leading: Icon(
+                          FontAwesomeIcons.squareFull,
+                          color: Colors.orange,
+                          size: 20.0,
+                        ),
+                        title: Text('Overweight'),
+                        trailing: Text('25 - 30'),
+                      ),
+                    ),
+                    Container(
+                      color: sixth,
+                      child: ListTile(
+                        leading: Icon(
+                          FontAwesomeIcons.squareFull,
+                          color: Colors.red.shade400,
+                          size: 20.0,
+                        ),
+                        title: Text('Obese Class I'),
+                        trailing: Text('30 - 35'),
+                      ),
+                    ),
+                    Container(
+                      color: seventh,
+                      child: ListTile(
+                        leading: Icon(
+                          FontAwesomeIcons.squareFull,
+                          color: Colors.red.shade500,
+                          size: 20.0,
+                        ),
+                        title: Text('Obese Class II'),
+                        trailing: Text('35 - 40'),
+                      ),
+                    ),
+                    Container(
+                      color: eighth,
+                      child: ListTile(
+                        leading: Icon(
+                          FontAwesomeIcons.squareFull,
+                          color: Colors.red.shade600,
+                          size: 20.0,
+                        ),
+                        title: Text('Obese Class III'),
+                        trailing: Text('> 40'),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
+          SizedBox(
+            height: 15.0,
+          ),
+          Center(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                 builder: (context) => TipsPage()
+                ));
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width - 30.0,
+                height: 44.0,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Color(0xFF5F786C),
+                ),
+                child: Text(
+                  'Tips for Maintaining a Healthy BMI',
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.white,
+                      fontFamily: 'OpenSansL',
+                      fontWeight: FontWeight.bold
+                      ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 10.0,),
         ],
       )),
     );
