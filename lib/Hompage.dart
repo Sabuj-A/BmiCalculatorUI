@@ -1,7 +1,9 @@
-import 'package:bmicalc/provider/calcProvider.dart';
+import './provider/calcProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import './screens/ResultPage.dart';
+import './widgets/UnitButtons.dart';
 
 class Homepage extends StatelessWidget {
   @override
@@ -43,37 +45,49 @@ class Homepage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               GestureDetector(
+                onTap: () {
+                  provider.selVal = 1;
+                  provider.changeColorStandard();
+                  provider.changeUnit();
+                  provider.changeVal();
+                },
                 child: Container(
                   width: 180.0,
-                  height: 55.0,
+                  height: 43.0,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: Color(0xFF5F786C),
+                    color: provider.KselectedBackgroundColor,
                   ),
                   child: Text(
                     'Standard',
                     style: TextStyle(
                         fontSize: 18.0,
-                        color: Colors.white,
+                        color: provider.KselectedTextColor,
                         fontFamily: 'OpenSansR'),
                   ),
                 ),
               ),
               GestureDetector(
+                onTap: () {
+                   provider.selVal = 2;
+                  provider.changeColorMetric();
+                  provider.changeUnit();
+                  provider.changeVal();
+                },
                 child: Container(
                   width: 180.0,
-                  height: 55.0,
+                  height: 43.0,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.white,
+                    color: provider.KunselectedBackgroundColor,
                   ),
                   child: Text(
                     'Metric',
                     style: TextStyle(
                         fontSize: 18.0,
-                        color: Colors.black,
+                        color: provider.KunselectedTextColor,
                         fontFamily: 'OpenSansR'),
                   ),
                 ),
@@ -87,13 +101,16 @@ class Homepage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               GestureDetector(
+                onTap: (){
+                 provider.changeColorMale();
+                },
                 child: Container(
                   width: 180.0,
                   height: 140.0,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: Color(0xFF5F786C),
+                    color: provider.pselectedbackGroundColor,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -101,13 +118,13 @@ class Homepage extends StatelessWidget {
                       Icon(
                         FontAwesomeIcons.male,
                         size: 70.0,
-                        color: Color(0xFF375748),
+                        color: provider.pselectedIconColor,
                       ),
                       Text(
                         'Male',
                         style: TextStyle(
                             fontSize: 18.0,
-                            color: Colors.white,
+                            color: provider.pselectedTextColor,
                             fontFamily: 'OpenSansR'),
                       ),
                     ],
@@ -115,13 +132,16 @@ class Homepage extends StatelessWidget {
                 ),
               ),
               GestureDetector(
+                onTap: (){
+                  provider.changeColorFemale();
+                },
                 child: Container(
                   width: 180.0,
                   height: 140.0,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: Colors.white,
+                    color: provider.pUnselectedbackGroundColor,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -129,13 +149,13 @@ class Homepage extends StatelessWidget {
                       Icon(
                         FontAwesomeIcons.female,
                         size: 70.0,
-                        color: Color(0xFF375748),
+                        color: provider.pUnselectedIconColor,
                       ),
                       Text(
                         'Female',
                         style: TextStyle(
                             fontSize: 18.0,
-                            color: Colors.black,
+                            color: provider.pUnselectedTextColor,
                             fontFamily: 'OpenSansR'),
                       ),
                     ],
@@ -147,187 +167,43 @@ class Homepage extends StatelessWidget {
           SizedBox(
             height: 25.0,
           ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Text(
-                    'Weight in kg',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.white,
-                        fontFamily: 'OpenSansR'),
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: () => provider.decrement(),
-                        child: CircleAvatar(
-                          backgroundColor: Color(0xFFFFFFFF),
-                          radius: 12.0,
-                          child: Icon(Icons.remove),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 50.0,
-                        width: 100.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFF4CA58E),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Text(
-                          provider.kg.toString(),
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.white,
-                              fontFamily: 'OpenSansR',
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => provider.increment(),
-                        child: CircleAvatar(
-                          backgroundColor: Color(0xFFFFFFFF),
-                          radius: 12.0,
-                          child: Icon(Icons.add),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+          UnitButtons(
+            decrement: () => provider.weightDecrement(),
+            increment: () => provider.weightIncrement(),
+            unitName: provider.weightUnit,
+            unitVal: provider.weight,
           ),
-           SizedBox(
+          SizedBox(
             height: 25.0,
           ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Text(
-                    'Height in cm',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.white,
-                        fontFamily: 'OpenSansR'),
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: () => provider.decrement(),
-                        child: CircleAvatar(
-                          backgroundColor: Color(0xFFFFFFFF),
-                          radius: 12.0,
-                          child: Icon(Icons.remove),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 50.0,
-                        width: 100.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFF4CA58E),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Text(
-                          provider.kg.toString(),
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.white,
-                              fontFamily: 'OpenSansR',
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => provider.increment(),
-                        child: CircleAvatar(
-                          backgroundColor: Color(0xFFFFFFFF),
-                          radius: 12.0,
-                          child: Icon(Icons.add),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+          UnitButtons(
+            decrement: () => provider.heightDecrement(),
+            increment: () => provider.heightIncrement(),
+            unitName: provider.heightUnit,
+            unitVal: provider.heightVal,
           ),
-           SizedBox(
+          SizedBox(
             height: 25.0,
           ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Text(
-                    'Age',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.white,
-                        fontFamily: 'OpenSansR'),
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: () => provider.decrement(),
-                        child: CircleAvatar(
-                          backgroundColor: Color(0xFFFFFFFF),
-                          radius: 12.0,
-                          child: Icon(Icons.remove),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 50.0,
-                        width: 100.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFF4CA58E),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Text(
-                          provider.kg.toString(),
-                          style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.white,
-                              fontFamily: 'OpenSansR',
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => provider.increment(),
-                        child: CircleAvatar(
-                          backgroundColor: Color(0xFFFFFFFF),
-                          radius: 12.0,
-                          child: Icon(Icons.add),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+           UnitButtons(
+            decrement: () => provider.ageDecrement(),
+            increment: () => provider.ageIncrement(),
+            unitName: 'Age',
+            unitVal: provider.age,
           ),
-          SizedBox(height: 25.0,),
-
-          Center(child: GestureDetector(
-            child:Container(
+          SizedBox(
+            height: 25.0,
+          ),
+          Center(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ResultPage(provider.height, provider.selUnit)));
+              },
+              child: Container(
                 width: 200.0,
                 height: 65.0,
                 alignment: Alignment.center,
@@ -342,13 +218,12 @@ class Homepage extends StatelessWidget {
                       color: Color(0xFF375748),
                       fontFamily: 'OpenSansR'),
                 ),
-              ), 
-          ),),
-          
+              ),
+            ),
+          ),
         ],
       )),
     );
   }
 }
 
-//button 1 active color:Color(0xFF5F786C)
