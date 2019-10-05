@@ -102,6 +102,7 @@ class Homepage extends StatelessWidget {
             children: <Widget>[
               GestureDetector(
                 onTap: (){
+                  provider.selGender = 1;
                  provider.changeColorMale();
                 },
                 child: Container(
@@ -110,7 +111,7 @@ class Homepage extends StatelessWidget {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: provider.pselectedbackGroundColor,
+                    color: provider.pMalebackGroundColor,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -118,13 +119,13 @@ class Homepage extends StatelessWidget {
                       Icon(
                         FontAwesomeIcons.male,
                         size: 70.0,
-                        color: provider.pselectedIconColor,
+                        color: provider.pMaleIconColor,
                       ),
                       Text(
                         'Male',
                         style: TextStyle(
                             fontSize: 18.0,
-                            color: provider.pselectedTextColor,
+                            color: provider.pMaleTextColor,
                             fontFamily: 'OpenSansR'),
                       ),
                     ],
@@ -133,6 +134,7 @@ class Homepage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: (){
+                  provider.selGender = 2;
                   provider.changeColorFemale();
                 },
                 child: Container(
@@ -141,7 +143,7 @@ class Homepage extends StatelessWidget {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: provider.pUnselectedbackGroundColor,
+                    color: provider.pFemalebackGroundColor,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -149,13 +151,13 @@ class Homepage extends StatelessWidget {
                       Icon(
                         FontAwesomeIcons.female,
                         size: 70.0,
-                        color: provider.pUnselectedIconColor,
+                        color: provider.pFemaleIconColor,
                       ),
                       Text(
                         'Female',
                         style: TextStyle(
                             fontSize: 18.0,
-                            color: provider.pUnselectedTextColor,
+                            color: provider.pFemaleTextColor,
                             fontFamily: 'OpenSansR'),
                       ),
                     ],

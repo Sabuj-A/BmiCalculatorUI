@@ -48,24 +48,23 @@ class CalcProvider with ChangeNotifier {
   Color KunselectedBackgroundColor = Color(0xFF5F786C);
   Color KunselectedTextColor = Colors.white;
   int selUnit = 1;
-  int selGender = 1;
+  int selGender = 0;
   void changeColorStandard() {
-    selUnit = 1;
+  
     KselectedBackgroundColor = Colors.white;
     KselectedTextColor = Colors.black;
     KunselectedTextColor = Colors.white;
     KunselectedBackgroundColor = Color(0xFF5F786C);
-    print('Standart pressed $selUnit');
+
     notifyListeners();
   }
 
   void changeColorMetric() {
-    selUnit = 2;
+    
     KselectedBackgroundColor = Color(0xFF5F786C);
     KselectedTextColor = Colors.white;
     KunselectedTextColor = Colors.black;
     KunselectedBackgroundColor = Colors.white;
-    print('Metric pressed $selUnit');
     notifyListeners();
   }
 
@@ -99,30 +98,30 @@ class CalcProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Color pselectedbackGroundColor = Colors.white;
-  Color pselectedIconColor = Color(0xFF375748);
-  Color pselectedTextColor = Colors.black;
-  Color pUnselectedbackGroundColor = Color(0xFF5F786C);
-  Color pUnselectedIconColor = Color(0xFF375748);
-  Color pUnselectedTextColor = Colors.white;
+  Color pMalebackGroundColor = Color(0xFF5F786C);
+  Color pMaleIconColor = Color(0xFF375748);
+  Color pMaleTextColor = Colors.black;
+  Color pFemalebackGroundColor = Color(0xFF5F786C);
+  Color pFemaleIconColor = Color(0xFF375748);
+  Color pFemaleTextColor = Colors.black;
 
-void changeColorMale(){
- pselectedbackGroundColor = Colors.white;
-   pselectedIconColor = Color(0xFF375748);
-   pselectedTextColor = Colors.black;
-   pUnselectedbackGroundColor = Color(0xFF5F786C);
-   pUnselectedIconColor = Color(0xFF375748);
-   pUnselectedTextColor = Colors.white;
-   notifyListeners();
-}
-void changeColorFemale(){
- pselectedbackGroundColor = Color(0xFF5F786C);
-   pselectedIconColor = Color(0xFF375748);
-   pselectedTextColor = Colors.white;
-   pUnselectedbackGroundColor = Colors.white;
-   pUnselectedIconColor = Color(0xFF375748);
-   pUnselectedTextColor = Colors.black;
-   notifyListeners();
-}
+  void changeColorMale() {
+    pMalebackGroundColor = Colors.white;
+    pMaleIconColor = Color(0xFF375748);
+    pMaleTextColor = Colors.black;
+    pFemalebackGroundColor = Color(0xFF5F786C);
+    pFemaleIconColor = Color(0xFF375748);
+    pFemaleTextColor = Colors.black;
+    notifyListeners();
+  }
 
+  void changeColorFemale() {
+    pMalebackGroundColor = Color(0xFF5F786C);
+    pMaleIconColor = Color(0xFF375748);
+    pMaleTextColor = Colors.black;
+    pFemalebackGroundColor = Colors.white;
+    pFemaleIconColor = Color(0xFF375748);
+    pFemaleTextColor = Colors.black;
+    notifyListeners();
+  }
 }
