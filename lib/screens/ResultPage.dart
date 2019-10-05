@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bmicalc/Colors.dart';
 
 class ResultPage extends StatelessWidget {
-  final height;
-  final selVal;
-  ResultPage(this.height, this.selVal);
+  final finalResult;
+  ResultPage(this.finalResult);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +72,7 @@ class ResultPage extends StatelessWidget {
                       height: 5.0,
                     ),
                     Text(
-                      '22.6',
+                      '$finalResult',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 50.0,
@@ -99,7 +99,7 @@ class ResultPage extends StatelessWidget {
                 
                 children: <Widget>[
                  Container(
-                 color:Color(0xFF5F786C),
+                 color: first,
                    child: ListTile(
                     
                      leading: Icon(FontAwesomeIcons.squareFull,color: Colors.black,size: 20.0,),
@@ -109,7 +109,7 @@ class ResultPage extends StatelessWidget {
                    ),
                  ),
                  Container(
-                   color:Color(0xFF5F786C),
+                   color:second,
                    child: ListTile(
                     
                      leading: Icon(FontAwesomeIcons.squareFull,color: Colors.blue,size: 20.0,),
@@ -118,7 +118,7 @@ class ResultPage extends StatelessWidget {
                    ),
                  ),
                   Container(
-                    color:Color(0xFF5F786C),
+                    color:third,
                     child: ListTile(
                      
                      leading: Icon(FontAwesomeIcons.squareFull,color: Colors.brown,size: 20.0,),
@@ -127,7 +127,7 @@ class ResultPage extends StatelessWidget {
                  ),
                   ),
                   Container(
-                    color:Colors.greenAccent,
+                    color:fourth,
                     child: ListTile(
         
                      leading: Icon(FontAwesomeIcons.squareFull,color: Colors.grey,size: 20.0,),
@@ -136,7 +136,7 @@ class ResultPage extends StatelessWidget {
                  ),
                   ),
                   Container(
-                    color:Color(0xFF5F786C),
+                    color:fifth,
                     child: ListTile(
                
                      leading: Icon(FontAwesomeIcons.squareFull,color: Colors.orange,size: 20.0,),
@@ -145,7 +145,7 @@ class ResultPage extends StatelessWidget {
                  ),
                   ),
                   Container(
-                    color:Color(0xFF5F786C),
+                    color:sixth,
                     child: ListTile(
                
                      leading: Icon(FontAwesomeIcons.squareFull,color: Colors.red.shade400,size: 20.0,),
@@ -154,7 +154,7 @@ class ResultPage extends StatelessWidget {
                  ),
                   ),
                   Container(
-                    color:Color(0xFF5F786C),
+                    color:seventh,
                     child: ListTile(
                
                      leading: Icon(FontAwesomeIcons.squareFull,color: Colors.red.shade500,size: 20.0,),
@@ -163,7 +163,7 @@ class ResultPage extends StatelessWidget {
                  ),
                   ),
                   Container(
-                    color:Color(0xFF5F786C),
+                    color:eighth,
                     child: ListTile(
                
                      leading: Icon(FontAwesomeIcons.squareFull,color: Colors.red.shade600,size: 20.0,),

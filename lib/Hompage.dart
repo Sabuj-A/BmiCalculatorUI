@@ -199,11 +199,18 @@ class Homepage extends StatelessWidget {
           Center(
             child: GestureDetector(
               onTap: () {
+                provider.calculateBmi(
+                  age: provider.age,
+                  genVal: provider.selGender,
+                  height: provider.height,
+                  weight: provider.weight,
+                  unitVal: provider.selVal
+                );
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            ResultPage(provider.height, provider.selUnit)));
+                            ResultPage(provider.finalResult)));
               },
               child: Container(
                 width: 200.0,
