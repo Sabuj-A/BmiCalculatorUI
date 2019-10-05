@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import './screens/ResultPage.dart';
 import './widgets/UnitButtons.dart';
-
+import 'Colors.dart';
 class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -57,13 +57,13 @@ class Homepage extends StatelessWidget {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: provider.KselectedBackgroundColor,
+                    color: uStandardBackGroundColor,
                   ),
                   child: Text(
                     'Standard',
                     style: TextStyle(
                         fontSize: 18.0,
-                        color: provider.KselectedTextColor,
+                        color: uStandardTextColor,
                         fontFamily: 'OpenSansR'),
                   ),
                 ),
@@ -81,13 +81,13 @@ class Homepage extends StatelessWidget {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: provider.KunselectedBackgroundColor,
+                    color: uMetricBackGroundColor,
                   ),
                   child: Text(
                     'Metric',
                     style: TextStyle(
                         fontSize: 18.0,
-                        color: provider.KunselectedTextColor,
+                        color: uMetricTextColor,
                         fontFamily: 'OpenSansR'),
                   ),
                 ),
@@ -111,7 +111,7 @@ class Homepage extends StatelessWidget {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: provider.pMalebackGroundColor,
+                    color: pMalebackGroundColor,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -119,13 +119,13 @@ class Homepage extends StatelessWidget {
                       Icon(
                         FontAwesomeIcons.male,
                         size: 70.0,
-                        color: provider.pMaleIconColor,
+                        color: pMaleIconColor,
                       ),
                       Text(
                         'Male',
                         style: TextStyle(
                             fontSize: 18.0,
-                            color: provider.pMaleTextColor,
+                            color: pMaleTextColor,
                             fontFamily: 'OpenSansR'),
                       ),
                     ],
@@ -143,7 +143,7 @@ class Homepage extends StatelessWidget {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: provider.pFemalebackGroundColor,
+                    color: pFemalebackGroundColor,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -151,13 +151,13 @@ class Homepage extends StatelessWidget {
                       Icon(
                         FontAwesomeIcons.female,
                         size: 70.0,
-                        color: provider.pFemaleIconColor,
+                        color: pFemaleIconColor,
                       ),
                       Text(
                         'Female',
                         style: TextStyle(
                             fontSize: 18.0,
-                            color: provider.pFemaleTextColor,
+                            color: pFemaleTextColor,
                             fontFamily: 'OpenSansR'),
                       ),
                     ],

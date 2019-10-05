@@ -44,26 +44,22 @@ class CalcProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Color KselectedBackgroundColor = Colors.white;
-  Color KselectedTextColor = Colors.black;
-  Color KunselectedBackgroundColor = Color(0xFF5F786C);
-  Color KunselectedTextColor = Colors.white;
   int selUnit = 1;
   int selGender = 0;
   void changeColorStandard() {
-    KselectedBackgroundColor = Colors.white;
-    KselectedTextColor = Colors.black;
-    KunselectedTextColor = Colors.white;
-    KunselectedBackgroundColor = Color(0xFF5F786C);
+    uStandardBackGroundColor = Colors.white;
+    uStandardTextColor = Colors.black;
+    uMetricTextColor = Colors.white;
+    uMetricBackGroundColor = Color(0xFF5F786C);
 
     notifyListeners();
   }
 
   void changeColorMetric() {
-    KselectedBackgroundColor = Color(0xFF5F786C);
-    KselectedTextColor = Colors.white;
-    KunselectedTextColor = Colors.black;
-    KunselectedBackgroundColor = Colors.white;
+    uStandardBackGroundColor = Color(0xFF5F786C);
+    uStandardTextColor = Colors.white;
+    uMetricTextColor = Colors.black;
+    uMetricBackGroundColor = Colors.white;
     notifyListeners();
   }
 
@@ -96,13 +92,6 @@ class CalcProvider with ChangeNotifier {
     }
     notifyListeners();
   }
-
-  Color pMalebackGroundColor = Color(0xFF5F786C);
-  Color pMaleIconColor = Color(0xFF375748);
-  Color pMaleTextColor = Colors.black;
-  Color pFemalebackGroundColor = Color(0xFF5F786C);
-  Color pFemaleIconColor = Color(0xFF375748);
-  Color pFemaleTextColor = Colors.black;
 
   void changeColorMale() {
     pMalebackGroundColor = Colors.white;
@@ -137,82 +126,42 @@ class CalcProvider with ChangeNotifier {
     }
     if (double.parse(finalResult) < 16) {
       first = Colors.greenAccent;
-      second = Color(0xFF5F786C);
-      third = Color(0xFF5F786C);
-      fourth = Color(0xFF5F786C);
-      fifth = Color(0xFF5F786C);
-      sixth = Color(0xFF5F786C);
-      seventh = Color(0xFF5F786C);
-      eighth = Color(0xFF5F786C);
+      second =
+          third = fourth = fifth = sixth = seventh = eighth = Color(0xFF5F786C);
     } else if (double.parse(finalResult) >= 16 &&
         double.parse(finalResult) <= 17) {
-      first = Color(0xFF5F786C);
       second = Colors.greenAccent;
-      third = Color(0xFF5F786C);
-      fourth = Color(0xFF5F786C);
-      fifth = Color(0xFF5F786C);
-      sixth = Color(0xFF5F786C);
-      seventh = Color(0xFF5F786C);
-      eighth = Color(0xFF5F786C);
+      first =
+          third = fourth = fifth = sixth = seventh = eighth = Color(0xFF5F786C);
     } else if (double.parse(finalResult) > 17 &&
         double.parse(finalResult) < 18.5) {
-      first = Color(0xFF5F786C);
-      second = Color(0xFF5F786C);
       third = Colors.greenAccent;
-      fourth = Color(0xFF5F786C);
-      fifth = Color(0xFF5F786C);
-      sixth = Color(0xFF5F786C);
-      seventh = Color(0xFF5F786C);
-      eighth = Color(0xFF5F786C);
+      first = second =
+          fourth = fifth = sixth = seventh = eighth = Color(0xFF5F786C);
     } else if (double.parse(finalResult) >= 18.5 &&
         double.parse(finalResult) < 25) {
-      first = Color(0xFF5F786C);
-      second = Color(0xFF5F786C);
-      third = Color(0xFF5F786C);
       fourth = Colors.greenAccent;
-      fifth = Color(0xFF5F786C);
-      sixth = Color(0xFF5F786C);
-      seventh = Color(0xFF5F786C);
-      eighth = Color(0xFF5F786C);
+      first =
+          second = third = fifth = sixth = seventh = eighth = Color(0xFF5F786C);
     } else if (double.parse(finalResult) >= 25 &&
         double.parse(finalResult) < 30) {
-      first = Color(0xFF5F786C);
-      second = Color(0xFF5F786C);
-      third = Color(0xFF5F786C);
-      fourth = Color(0xFF5F786C);
       fifth = Colors.greenAccent;
-      sixth = Color(0xFF5F786C);
-      seventh = Color(0xFF5F786C);
-      eighth = Color(0xFF5F786C);
+      first = second =
+          third = fourth = sixth = seventh = eighth = Color(0xFF5F786C);
     } else if (double.parse(finalResult) >= 30 &&
         double.parse(finalResult) < 35) {
-      first = Color(0xFF5F786C);
-      second = Color(0xFF5F786C);
-      third = Color(0xFF5F786C);
-      fourth = Color(0xFF5F786C);
-      fifth = Color(0xFF5F786C);
       sixth = Colors.greenAccent;
-      seventh = Color(0xFF5F786C);
-      eighth = Color(0xFF5F786C);
+      first = second =
+          third = fourth = fifth = seventh = eighth = Color(0xFF5F786C);
     } else if (double.parse(finalResult) >= 35 &&
         double.parse(finalResult) <= 40) {
-      first = Color(0xFF5F786C);
-      second = Color(0xFF5F786C);
-      third = Color(0xFF5F786C);
-      fourth = Color(0xFF5F786C);
-      fifth = Color(0xFF5F786C);
-      sixth = Color(0xFF5F786C);
       seventh = Colors.greenAccent;
-      eighth = Color(0xFF5F786C);
+      first =
+          second = third = fourth = fifth = sixth = eighth = Color(0xFF5F786C);
     } else if (double.parse(finalResult) > 40) {
-      first = Color(0xFF5F786C);
-      second = Color(0xFF5F786C);
-      third = Color(0xFF5F786C);
-      fourth = Color(0xFF5F786C);
-      fifth = Color(0xFF5F786C);
-      sixth = Color(0xFF5F786C);
-      seventh = Color(0xFF5F786C);
       eighth = Colors.greenAccent;
+      first =
+          second = third = fourth = fifth = sixth = seventh = Color(0xFF5F786C);
     }
   }
 }
